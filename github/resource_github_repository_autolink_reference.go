@@ -104,7 +104,7 @@ func resourceGithubRepositoryAutolinkReferenceRead(d *schema.ResourceData, meta 
 	}
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	autolinkRef, _, err := client.Repositories.GetAutolink(ctx, owner, repoName, autolinkRefID)

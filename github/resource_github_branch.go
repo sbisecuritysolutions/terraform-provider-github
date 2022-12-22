@@ -100,7 +100,7 @@ func resourceGithubBranchCreate(d *schema.ResourceData, meta interface{}) error 
 func resourceGithubBranchRead(d *schema.ResourceData, meta interface{}) error {
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	client := meta.(*Owner).v3client

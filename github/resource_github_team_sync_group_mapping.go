@@ -92,7 +92,7 @@ func resourceGithubTeamSyncGroupMappingRead(d *schema.ResourceData, meta interfa
 
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	idpGroupList, resp, err := client.Teams.ListIDPGroupsForTeamBySlug(ctx, orgName, slug)

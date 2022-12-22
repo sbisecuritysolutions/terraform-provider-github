@@ -137,7 +137,7 @@ func resourceGithubIssueRead(d *schema.ResourceData, meta interface{}) error {
 	orgName := meta.(*Owner).name
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	log.Printf("[DEBUG] Reading issue: %d (%s/%s)", number, orgName, repoName)

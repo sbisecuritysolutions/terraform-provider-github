@@ -142,7 +142,7 @@ func resourceGithubTeamRead(d *schema.ResourceData, meta interface{}) error {
 	}
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	team, resp, err := client.Teams.GetTeamByID(ctx, orgId, id)

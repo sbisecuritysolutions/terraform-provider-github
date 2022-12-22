@@ -61,7 +61,7 @@ func resourceOrganizationBlockRead(d *schema.ResourceData, meta interface{}) err
 
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	blocked, resp, err := client.Organizations.IsBlocked(ctx, orgName, username)

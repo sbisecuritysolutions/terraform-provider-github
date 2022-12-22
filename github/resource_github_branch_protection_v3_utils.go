@@ -68,7 +68,7 @@ func requireSignedCommitsRead(d *schema.ResourceData, meta interface{}) error {
 
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	signedCommitStatus, _, err := client.Repositories.GetSignaturesProtectedBranch(ctx,
@@ -93,7 +93,7 @@ func requireSignedCommitsUpdate(d *schema.ResourceData, meta interface{}) (err e
 
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	if requiredSignedCommit {

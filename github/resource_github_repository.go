@@ -490,7 +490,7 @@ func resourceGithubRepositoryRead(d *schema.ResourceData, meta interface{}) erro
 
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	repo, resp, err := client.Repositories.Get(ctx, owner, repoName)

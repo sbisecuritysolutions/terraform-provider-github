@@ -59,7 +59,7 @@ func resourceGithubUserGpgKeyRead(d *schema.ResourceData, meta interface{}) erro
 	}
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	key, _, err := client.Users.GetGPGKey(ctx, id)

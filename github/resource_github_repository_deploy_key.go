@@ -95,7 +95,7 @@ func resourceGithubRepositoryDeployKeyRead(d *schema.ResourceData, meta interfac
 	}
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	key, resp, err := client.Repositories.GetKey(ctx, owner, repoName, id)

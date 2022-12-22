@@ -99,7 +99,7 @@ func resourceGithubProjectCardRead(d *schema.ResourceData, meta interface{}) err
 	cardID := d.Get("card_id").(int)
 	ctx := context.WithValue(context.Background(), ctxId, d.Id())
 	if !d.IsNewResource() {
-		ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
+		//ctx = context.WithValue(ctx, ctxEtag, d.Get("etag").(string))
 	}
 
 	log.Printf("[DEBUG] Reading project card: %s", nodeID)
